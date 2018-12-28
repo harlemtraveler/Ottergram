@@ -1,0 +1,14 @@
+{
+  "name": "ottergram",
+  "version": "1.0.0",
+  "description": "A simple web-based photo gallery (Instagram for Otters)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Timothy Keaveny",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.26.3"
+  }
+}
