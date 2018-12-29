@@ -1,10 +1,21 @@
 @font-face {
+  font-family: 'airstreamregular';
+  src: url('fonts/Airstream-webfont.eot');
+  src: url('fonts/Airstream-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/Airstream-webfont.woff') format('woff'),
+  url('fonts/Airstream-webfont.ttf') format('truetype'),
+  url('fonts/Airstream-webfont.svg#airstreamregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'lakeshore';
   src: url('fonts/LAKESHOR-webfont.eot');
   src: url('fonts/LAKESHOR-webfont.eot?#iefix') format('embedded-opentype'),
   url('fonts/LAKESHOR-webfont.woff') format('woff'),
   url('fonts/LAKESHOR-webfont.ttf') format('truetype'),
-  url('fonts/LAKESHOR-webfont.svg') format('svg');
+  url('fonts/LAKESHOR-webfont.svg#lakeshore') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +37,10 @@ a {
   text-decoration: none;
 }
 
+.main-header {
+  flex: 0 1 auto;
+}
+
 .logo-text {
   background: white;
 
@@ -35,7 +50,17 @@ a {
   font-size: 37px;
 }
 
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .thumbnail-list {
+  flex: 0 1 auto;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
   list-style: none;
   padding: 0;
 
@@ -44,28 +69,16 @@ a {
   overflow-x: auto;
 }
 
-.thumbnail-item + .thumbnail-item {
-  margin-top: 10px;
-}
-
 .thumbnail-item {
+  /* Below produces horizintal scroll "ferris wheel" */
+  display: inline-block;
+  min-width: 120px;
+  max-width: 120px;
+
   /* Not all browsers support rgba */
   border: 1px solid rgb(100%, 100%, 100%);
   border: 1px solid rgba(100%, 100%, 100%, 0.8);
-  /* display: block; */
-
-  /* Below produces horizintal scroll "ferris wheel" */
-  display: inline-block;
-  width: 120px;
 }
-
-/* #barry-otter {
-  background: green;
-}
-
-li {
-  background: red;
-} */
 
 .thumbnail-image {
   display: block;
@@ -83,6 +96,30 @@ li {
   font-size: 18px;
 }
 
+.detail-image-container {
+  flex: 1 1 auto;
+  /* Makes items flex and aligns content to center (vertically & horizintally) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-image-frame {
+  position: relative;
+  text-align: center;
+}
+
 .detail-image {
   width: 90%;
+}
+
+.detail-image-title {
+  position: absolute;
+  bottom: -16px;
+  left: 4px;
+  
+  font-family: airstreamregular;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+  font-size: 40px;
 }
