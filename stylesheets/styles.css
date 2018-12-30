@@ -30,7 +30,7 @@ body {
   flex-direction: column;
 
   font-size: 10px;
-  background: rgb(149, 194, 215);
+  background: rgb(46, 40, 42);
 }
 
 a {
@@ -42,7 +42,7 @@ a {
 }
 
 .logo-text {
-  background: white;
+  background: #ef3e36;
 
   text-align: center;
   text-transform: uppercase;
@@ -62,7 +62,7 @@ a {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  padding: 0;
+  padding: 20px 0;
 
   /* Horizontal scroll style */
   white-space: nowrap;
@@ -74,10 +74,15 @@ a {
   display: inline-block;
   min-width: 120px;
   max-width: 120px;
-
   /* Not all browsers support rgba */
   border: 1px solid rgb(100%, 100%, 100%);
   border: 1px solid rgba(100%, 100%, 100%, 0.8);
+
+  transition: transform 133ms ease-in-out;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
 }
 
 .thumbnail-image {
@@ -90,8 +95,8 @@ a {
   margin: 0;
   padding: 4px 10px;
 
-  background: rgb(96, 125, 139);
-  color: rgb(202, 238, 255);
+  background: #ef3e36;
+  color: #000;
 
   font-size: 18px;
 }
@@ -107,6 +112,13 @@ a {
 .detail-image-frame {
   position: relative;
   text-align: center;
+
+  transition: transform 333ms cubic-bezier(1,.06,.28,1);
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
 }
 
 .detail-image {
@@ -124,6 +136,19 @@ a {
   font-size: 40px;
 }
 
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+  max-width: 80%;
+}
+
 @media all and (min-width: 768px) {
   .main-content {
     flex-direction: row;
@@ -134,6 +159,8 @@ a {
     flex-direction: column;
     order: 0;
     margin-left: 20px;
+
+    padding: 0 35px;
   }
 
   .thumbnail-item {
